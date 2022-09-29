@@ -1,0 +1,12 @@
+# TEMPLATE module using this static file deploy into three servers
+---
+- name: Update n1 servers
+  hosts: all
+  become: yes
+
+
+  tasks:
+  - name: COPY dynalic j2 file using template
+    template:
+      src: dynamic.j2
+      dest: /var/www/html/dynamic.html
