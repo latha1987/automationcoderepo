@@ -1,0 +1,13 @@
+# copy module using this static file deploy into three servers
+---
+- name: Update all servers
+  hosts: all
+  become: yes
+
+
+  tasks:
+  - name: COPY static file
+    copy:
+      src: static.html
+      dest: /var/www/html
+...
